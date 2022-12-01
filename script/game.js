@@ -28,6 +28,8 @@ var nome_jog1 = prompt("Entre com jogador 1");
 var nome_jog2 = prompt("Entre com jogador 2");
 comecarJogo();
 carregarOnClickCartas();
+tema.preload();
+tema.load();
 tema.play()
 document.getElementById("regras").addEventListener("click", mostrarRegras)
 
