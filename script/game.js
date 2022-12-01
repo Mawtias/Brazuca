@@ -15,7 +15,7 @@ var escolha_j1 = 0;
 var escolha_j2 = 0;
 var jogadorAtivo = 1;
 var interativo = true;
-var audio = document.getElementById("tema");
+var tema = document.getElementById("tema");
 
 //FUNÇÃO NOME JOGADORES
 function nome_jogadores(){  
@@ -28,9 +28,6 @@ var nome_jog1 = prompt("Entre com jogador 1");
 var nome_jog2 = prompt("Entre com jogador 2");
 comecarJogo();
 carregarOnClickCartas();
-tema.preload();
-tema.load();
-tema.play()
 document.getElementById("regras").addEventListener("click", mostrarRegras)
 
 
@@ -195,6 +192,7 @@ function proxJogador(){
 function carregarOnClickCartas(){
   for(i = 1; i < dock.length  + 1; i++){
     document.getElementById(i).addEventListener("click",selecionarCarta)
+    document.getElementById(i).addEventListener("click",audio)
   }  
 }
 
@@ -255,4 +253,8 @@ function mostrarRegras(){
   "Neste jogo de advinhação, seu objetivo é conseguir mais pontos que seu adversário após 3 rodadas." + 
   " Em cada rodada você deverá escolher um jogador e em seguida tem 3 tentativas para acertar onde ele está."+ 
   " Quanto antes você acertar, mais pontos você faz! Boa sorte e VAI BRASIL!! #vemHEXA")
+}
+
+function audio(){
+  tema.play()
 }
